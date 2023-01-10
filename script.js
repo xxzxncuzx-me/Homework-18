@@ -1,5 +1,5 @@
-"use strict";
-// // // Дано масив з елементами різних типів. Створити функцію яка вираховує середнє арифметичне лише числових елементів даного масиву.
+// "use strict";
+// // // // Дано масив з елементами різних типів. Створити функцію яка вираховує середнє арифметичне лише числових елементів даного масиву.
 
 const arr = [222, 30, 50, 'a', 2, 'c', 'f', 1, 't'];
 
@@ -17,7 +17,7 @@ function calculateNum(arr) {
 const result = calculateNum(arr)
 alert(result);
 
-// // // Написати функцію doMath(x, znak, y), яка отримує 3 аргументи: числа x і y, рядок znak. У змінній znak може бути: +, -, *, /, %, ^ (ступінь ).Вивести результат математичної дії, вказаної в змінній znak.Обидва числа і знак виходять від користувача.
+// // // // Написати функцію doMath(x, znak, y), яка отримує 3 аргументи: числа x і y, рядок znak. У змінній znak може бути: +, -, *, /, %, ^ (ступінь ).Вивести результат математичної дії, вказаної в змінній znak.Обидва числа і знак виходять від користувача.
 
 const x = +prompt('Введіть x');
 const y = +prompt('Введіть y');
@@ -35,7 +35,7 @@ function doMath(x, znak, y) {
 const newResult = doMath(x, znak, y);
 alert(newResult)
 
-// // // Написати функцію заповнення даними користувача двомірного масиву. Довжину основного масиву і внутрішніх масивів задає користувач. Значення всіх елементів всіх масивів задає користувач.
+// // // // Написати функцію заповнення даними користувача двомірного масиву. Довжину основного масиву і внутрішніх масивів задає користувач. Значення всіх елементів всіх масивів задає користувач.
 
 function userArr() {
     let array = [];
@@ -65,24 +65,24 @@ function userArr() {
 const userData = userArr();
 alert(userData);
 
-// Створити функцію, яка прибирає з рядка всі символи, які ми передали другим аргументом. 'func(" hello world", ['l', 'd'])' поверне нам "heo wor". Вихідний рядок та символи для видалення задає користувач.
+// // Створити функцію, яка прибирає з рядка всі символи, які ми передали другим аргументом. 'func(" hello world", ['l', 'd'])' поверне нам "heo wor". Вихідний рядок та символи для видалення задає користувач.
 
 const str = prompt('Введіть рядок');
+const toRemove = prompt('Введіть разом два символи, які б ви хотіли прибрати');
 
-const toRemove1 = prompt('Введіть перший символ, який ви хотіли б прибрати');
-const toRemove2 = prompt('Введіть другий символ, які ви хотіли б прибрати');
-
-function removeEl(str, [toRemove1, toRemove2]) {
-    if (!str || !toRemove1 || !toRemove2) {
+function removeEl(str, toRemove) {
+    if (!str || !toRemove) {
         return 'error'
     }
     const toRemoveStr = str.split('');
+    const toRemoveArr = toRemove.split('');
 
-    if (toRemoveStr.includes(toRemove1 && toRemove2)) {
-        return toRemoveStr.filter(el => el !== toRemove1 && el !== toRemove2).join('')
+    if (toRemoveArr.length === 2 && toRemoveStr.includes(toRemoveArr[0] && toRemoveArr[1])) {
+        return toRemoveStr.filter(el => el !== toRemoveArr[0] && el !== toRemoveArr[1]).join('')
     }
     return 'error'
 }
 
-const removed = removeEl(str, [toRemove1, toRemove2])
+const removed = removeEl(str, toRemove)
 alert(removed)
+
