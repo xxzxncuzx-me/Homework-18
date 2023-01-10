@@ -68,14 +68,14 @@ alert(userData);
 // // Створити функцію, яка прибирає з рядка всі символи, які ми передали другим аргументом. 'func(" hello world", ['l', 'd'])' поверне нам "heo wor". Вихідний рядок та символи для видалення задає користувач.
 
 const str = prompt('Введіть рядок');
-const toRemove = prompt('Введіть разом два символи, які б ви хотіли прибрати');
+const toRemove = prompt('Введіть через пробіл два символи, які б ви хотіли прибрати');
 
 function removeEl(str, toRemove) {
     if (!str || !toRemove) {
         return 'error'
     }
     const toRemoveStr = str.split('');
-    const toRemoveArr = toRemove.split('');
+    const toRemoveArr = toRemove.split(' ');
 
     if (toRemoveArr.length === 2 && toRemoveStr.includes(toRemoveArr[0] && toRemoveArr[1])) {
         return toRemoveStr.filter(el => el !== toRemoveArr[0] && el !== toRemoveArr[1]).join('')
